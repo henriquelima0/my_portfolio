@@ -1,7 +1,9 @@
 /*SCROLL REVEAL */
+
 ScrollReveal().reveal(".headline");
 ScrollReveal().reveal(".punchline", { delay: 1000 });
 ScrollReveal().reveal(".tagline", { delay: 500 });
+
 /*NavBar*/
 
 let btnMobile = document.getElementById("btn-mobile");
@@ -15,6 +17,7 @@ function toggleMenu(event) {
 btnMobile.addEventListener("click", toggleMenu);
 btnMobile.addEventListener("touchstart", toggleMenu);
 
+/* JQUERY */
 var $doc = $("html, body");
 $("a").click(function () {
   $doc.animate(
@@ -25,6 +28,9 @@ $("a").click(function () {
   );
   return false;
 });
+
+
+/* SwiperJS */
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 4,
@@ -39,12 +45,40 @@ var swiper = new Swiper(".mySwiper", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+    dynamicBullets: true,
   },
 });
 
+/* SwiperJS Resp */
 function getDirection() {
   var windowWidth = window.innerWidth;
   var direction = window.innerWidth <= 500 ? "vertical" : "horizontal";
 
   return direction;
 }
+
+ 
+var swiper = new Swiper(".slide-content", {
+  slidesPerView: 3,
+  spaceBetween: 25,
+  loop: true,
+  centeredSlides: true,
+  fade: 'true',
+  grabCursor: 'true',
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  breakpoints:{
+      0: {
+          slidesPerView: 1,
+      },
+      520: {
+          slidesPerView: 2,
+      },
+      950: {
+          slidesPerView: 3,
+      },
+  },
+});
